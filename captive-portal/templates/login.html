@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connect to Wi-Fi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; }
+        select { padding: 10px; margin: 10px 0; width: 85%; font-size: 16px; }
+        input { padding: 10px; margin: 10px 0; width: 80%; font-size: 16px; }
+        button { padding: 10px 20px; background: #0078D7; color: white; border: none; font-size: 16px; cursor: pointer; }
+        button:hover { background: #005a9e; }
+    </style>
+</head>
+<body>
+    <h2>Pi Setup Portal:</h2>
+    <p>Select your Wi-Fi network below:</p>
+    
+    <form action="/connect" method="post">
+        <select name="ssid" required>
+            <option value="" disabled selected>Select a Network...</option>
+            {% for network in ssids %}
+                <option value="{{ network }}">{{ network }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        
+        <input type="password" name="password" placeholder="Password"><br>
+        <button type="submit">Connect</button>
+    </form>
+</body>
+</html>
