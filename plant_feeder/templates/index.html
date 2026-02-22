@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Plant Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta http-equiv="refresh" content="10">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Smart Plant Feeder</h1>
+        <div class="card info-card" style="display: flex; justify-content: space-between; align-items: center; background-color: #444; padding: 15px 20px;">
+            <strong style="font-size: 16px;">Auto-Watering: 
+                <span style="color: {{ '#4CAF50' if auto_enabled else '#e74c3c' }};">{{ 'ON' if auto_enabled else 'OFF' }}</span>
+            </strong>
+            <form method="POST" style="margin: 0;">
+                <button type="submit" name="toggle_auto" class="light-btn" style="margin-top: 0; padding: 8px 15px; background-color: {{ '#e74c3c' if auto_enabled else '#4CAF50' }};">
+                    Turn {{ 'OFF' if auto_enabled else 'ON' }}
+                </button>
+            </form>
+        </div>
+        <div class="card">
+            <h2>Current Moisture</h2>
+            <div class="sensor-value">{{ moisture }}% <span style="font-size: 24px; color: #aaa;">wet</span></div>
+            <div style="background-color: #555; border-radius: 10px; height: 20px; width: 100%; margin-top: 10px;">
+            <div style="background-color: #4CAF50; height: 20px; border-radius: 10px; width: {{ moisture }};"></div>
+</div>
+            <p class="status-text">{{ status }}</p>
+        </div>
+
+        <div class="card info-card">
+            <p><strong>Last Checked:</strong> {{ last_checked }}</p>
+            <p><strong>Last Watered:</strong> {{ last_watered }}</p>
+        </div>
+
+    <form method="POST" style="margin-bottom: 20px;">
+        <button type="submit" name="force_water" class="btn-water">Water Plant Now</button>
+    </form>
+
+    <div class="card info-card">
+        <p><strong>UV Lights:</strong> {{ light_status }}</p>
+    </div>
+
+    <form method="POST">
+        <button type="submit" name="toggle_lights" class="light-btn">Toggle UV Lights</button>
+    </form>
+</div>
+
+</body>
+</html>
+
