@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #4CAF50; 
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #ccc;
+    margin: 0;
+}
+
+.card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.sensor-value {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.status-text {
+    color: #aaa;
+    font-style: italic;
+}
+
+.info-card p {
+    margin: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.btn-water {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-water:hover {
+    background-color: #0056b3; 
+}
+
+.light-btn {
+    background-color: #8e44ad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;}
+
+.light-btn:hover {
+    background-color: #732d91;
+}
